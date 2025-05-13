@@ -1,11 +1,16 @@
-
-# Online Python - IDE, Editor, Compiler, Interpreter
-
-def sum(a, b):
-    return (a + b)
-
-a = int(input('Enter 1st number: '))
-b = int(input('Enter 2nd number: '))
-while True:
-    print("Tengo 18 horas para entregar el trabajo y ni idea lo que estoy haciendo")
-print(f'Sum of {a} and {b} is {sum(a, b)}')
+n = int(input())
+m = int(input())
+Mndistancia = m - n
+Nmdistancia = n - m
+if n > m:
+    if Nmdistancia < 50:
+        print(f"{Nmdistancia} veces arriba")
+    if Nmdistancia > 50:
+        Final_distancia = (100 - n) + m
+        print(f"{Final_distancia} veces abajo")
+if n < m:
+    if Mndistancia < 50:
+        print(f"{Mndistancia} veces abajo")
+    if Mndistancia > 50:
+        Final_distancia = (100 - m) + n
+        print(f"{Final_distancia} veces arriba")
