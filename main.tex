@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackag
+
+\title{Informe de Actividad Git - Archivo Python}
+\author{Tomás Javier Marín Pérez}
+\date{10 de mayo 2025}
+
+\begin{document}
+
+\maketitle
+
+\section*{Introducción}
+
+Este informe presenta un algoritmo desarrollado como parte de una actividad del programa \textbf{Clearn}, realizado aproximadamente el 30 de marzo. El objetivo del programa es calcular la cantidad mínima de veces que una persona debe presionar los botones del control remoto para cambiar desde el canal actual al canal objetivo.
+
+\section*{Autor del algoritmo}
+
+El algoritmo fue creado por \textbf{Tomás Javier Marín Pérez} como respuesta a un ejercicio propuesto por la plataforma Clearn. Fue desarrollado desde cero, sin copiar código externo, usando únicamente conceptos básicos aprendidos en clases de programación.
+
+El algoritmo luego compara ambas distancias y muestra cuál es la forma más eficiente (la que requiere menos presiones del botón).
+
+\section*{Funcionamiento del algoritmo}
+
+El algoritmo realiza lo siguiente:
+\begin{enumerate}
+    \item Recibe como entrada dos números enteros: el canal actual y el canal objetivo.
+    \item Calcula la diferencia directa entre ambos canales.
+    \item Si la diferencia directa es menor que 50, asume que esa dirección es la más corta.
+    \item Si la diferencia directa es mayor que 50, significa que es más rápido cambiar de canal en la otra dirección (pasando por el canal 100 al 1 o viceversa).
+    \item Imprime el número mínimo de veces que se deben presionar los botones, junto con la dirección (\texttt{"X veces arriba"} o \texttt{"Y veces abajo"}).
+\end{enumerate}
+
+\section*{Código fuente}
+
+\begin{verbatim}
+n = int(input())
+m = int(input())
+Mndistancia = m - n
+Nmdistancia = n - m
+if n > m:
+    if Nmdistancia < 50:
+        print(f"{Nmdistancia} veces arriba")
+    if Nmdistancia > 50:
+        Final_distancia = (100 - n) + m
+        print(f"{Final_distancia} veces abajo")
+if n < m:
+    if Mndistancia < 50:
+        print(f"{Mndistancia} veces abajo")
+    if Mndistancia > 50:
+        Final_distancia = (100 - m) + n
+        print(f"{Final_distancia} veces arriba")
+\end{verbatim}
+\end{document}
+
